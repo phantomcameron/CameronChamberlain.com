@@ -1,0 +1,351 @@
+// CSS Reset
+@import "reset.less";
+
+// Core variables and mixins
+@import "variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "mixins.less";
+
+// Grid system and page structure
+@import "scaffolding.less";
+@import "grid.less";
+@import "layouts.less";
+
+// Base CSS
+@import "type.less";
+//@import "code.less";
+//@import "forms.less";
+@import "tables.less";
+
+// Components: common
+@import "sprites.less";
+//@import "dropdowns.less";
+//@import "wells.less";
+@import "component-animations.less";
+@import "close.less";
+
+// Components: Buttons & Alerts
+@import "buttons.less";
+//@import "button-groups.less";
+//@import "alerts.less"; // Note: alerts share common CSS with buttons and thus have styles in buttons.less
+
+// Components: Nav
+@import "navs.less";
+@import "navbar.less";
+//@import "breadcrumbs.less";
+//@import "pagination.less";
+//@import "pager.less";
+
+// Components: Popovers
+//@import "modals.less";
+//@import "tooltip.less";
+//@import "popovers.less";
+
+// Components: Misc
+//@import "thumbnails.less";
+//@import "labels.less";
+//@import "badges.less";
+//@import "progress-bars.less";
+@import "accordion.less";
+@import "carousel.less";
+//@import "hero-unit.less";
+
+// Utility classes
+@import "utilities.less"; // Has to be last to override when necessary
+
+@import "responsive.less";
+
+/* Declare Variables, Mixins */
+
+.stripedBg{
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%,
+						color-stop(.25, rgba(255, 255, 255, .05)),
+						color-stop(.25, transparent),
+						color-stop(.5, transparent),
+						color-stop(.5, rgba(255, 255, 255, .05)),
+						color-stop(.75, rgba(255, 255, 255, .05)),
+						color-stop(.75, transparent),
+						to(transparent));
+	background-image: -moz-linear-gradient(-45deg,
+						rgba(255, 255, 255, .05) 25%,
+						transparent 25%,
+						transparent 50%,
+						rgba(255, 255, 255, .05) 50%,
+						rgba(255, 255, 255, .05) 75%,
+						transparent 75%, transparent);
+	background-image: -o-linear-gradient(-45deg,
+						rgba(255, 255, 255, .05) 25%,
+						transparent 25%,
+						transparent 50%,
+						rgba(255, 255, 255, .05) 50%,
+						rgba(255, 255, 255, .05) 75%,
+						transparent 75%, transparent);
+	background-image: linear-gradient(-45deg,
+						rgba(255, 255, 255, .05) 25%,
+						transparent 25%,
+						transparent 50%,
+						rgba(255, 255, 255, .05) 50%,
+						rgba(255, 255, 255, .05) 75%,
+						transparent 75%, transparent);
+	.background-size(50px 50px); /* Controls the size of the stripes */
+}
+
+@footerHeight: 92px;
+@paperColor: #E9E2DB;
+@bgColor: #DCC9BC;
+@textColor: #484038;
+@shadowColor: #a09c99;
+
+/* Start CSS */
+body{
+	background-color: @bgColor;
+	.stripedBg;
+}
+
+section {
+	overflow: auto;
+	background-color: @paperColor;
+	color: @textColor;
+    .box-shadow(1px 1px 8px @shadowColor);
+	border: 1px solid #999;
+    .border-radius(3px);
+}
+
+.navhome section h1 {
+    font-size: 54px;
+    line-height: 62px;
+    font-weight: 200;
+}
+
+.navhome section em {
+    color: #93B135;
+    text-shadow: 0px 1px 0px white;
+    font-style: normal;
+    font-weight: 200;
+    display: inline-block;
+}
+
+@-webkit-keyframes emHover {
+	0% {-webkit-transform:skew(0deg);} 							/*start at 0*/
+	10% {-webkit-transform:skew(-2deg, -12deg);} 				/*anticipation*/
+	15% {-webkit-transform:skew(5deg, 20deg);}					/*breakdown*/
+	70% {				padding-left: 3px;
+						-webkit-transform:skew(10deg, 30deg);} 	/*key*/
+	71% {  				padding-left: 0.5em;
+						-webkit-transform:skew(12deg, 35deg);} 	/*pushed key*/
+	75% {				padding-left: 0px;
+						-webkit-transform:skew(0deg, 0deg);}	/*return to 0*/
+	77% {-webkit-transform:skew(-2deg, -5deg);} 				/*bounce*/
+	80% {-webkit-transform:skew(0deg);}							/*bounce back*/
+	100% {-webkit-transform:skew(0deg);} 						/*return to 0*/
+}
+
+section h1:hover em{
+	-webkit-transform-origin: bottom left;
+	-webkit-animation-name: emHover;
+	-webkit-animation-duration: 3.5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-out;
+	-moz-transform-origin: bottom left;
+	-o-transform-origin: bottom left;
+	transform-origin: bottom left;
+	.transition(all 0.5s ease-in);
+	.rotate(21);
+}
+
+html, body {
+    height: 100%;
+}
+
+section, footer {
+    padding: @gridGutterWidth;
+}
+
+footer {
+    background-color:@paperColor; 
+    height: @footerHeight;
+    font-size: 22px;
+    line-height: 30px;
+    .box-shadow(1px 1px 8px @shadowColor);
+	border: 1px solid #999;
+    .border-radius(3px);
+    -webkit-transition: background-color 0.5s ease-out;
+    text-align: right;
+    overflow:hidden;
+}
+
+.vcard img, .org, .title, .role, .adr, .fn {
+display: none;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: (@navbarHeight * 2) auto (20 - @footerHeight);
+}
+.push {
+    height: @footerHeight;
+}
+
+.navbar-inner{
+    background-color:@paperColor;
+    background-image:none;
+}
+.btn-navbar{
+    background-color:darken(@paperColor, 20%);
+    background-image:none;
+}
+
+iframe{
+    width:100%;
+    height: 658px;
+    border:none;
+}
+
+.row iframe {
+  height: 320px;
+  padding-top:20px;
+}
+
+.navbar .brand{
+    color:darken(#7B838C,10%);
+}
+
+.brand.active{
+    color:@textColor;
+}
+
+::selection {
+    background: #8580A9;
+    color: white;
+    text-shadow: none;
+}
+
+.navbar .nav > li > a {
+    color: #7B838C;
+    text-shadow:none;
+}
+
+.accordion-heading{
+    background-color: lighten(@paperColor,5%);
+}
+.accordion-group{
+    border-color:lighten(@paperColor,5%);
+    margin:0px -1px 2px -1px;
+}
+
+.accordion-inner{
+    padding:0;
+}
+
+.carousel-inner img{
+  .border-radius(3px);
+  width:100%;
+}
+
+h2{
+  padding-top: 20px;
+}
+
+/* Fix up the Menu Hover Colours */
+.navbar .nav > li > a:hover, .navbar .in .nav > .active > a:hover{
+  color:@textColor;
+}
+.navbar .in .nav > li > a:hover{
+  color:@white;
+}
+.navbar .nav > li > a:hover i{
+  opacity:1;
+}
+.navbar .nav .active > a, .navbar .nav .active > a:hover{
+  background-color:lighten(@paperColor,5%);
+  color:@textColor;
+}
+.nav i{
+  opacity:0.5;
+}
+.nav .active i{
+  opacity:1;
+}
+
+/* Drawings Page */
+.allSlides {
+	width: 62em;
+	height: 46em;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:left; 
+	z-index: 4;
+}
+
+.no-js .allSlides{
+	background-image: url(../images/drawing_nojs.jpg);
+	background-repeat: no-repeat;
+}
+
+.no-js .allSlides h1{
+	display: none;
+	visibility: hidden;
+}
+
+
+.allSlides img{
+	max-width:100%;
+	max-height:100%;
+}
+
+.js section .content {display:none;}
+
+
+
+// Small Desktop
+@media (max-width: 1200px) {
+    iframe{
+        height: 526px;
+    }
+}
+
+// Portrait tablet to landscape and desktop
+@media (max-width: 980px) {
+    iframe{
+        height: 406px;
+    }
+    #wrap{
+        margin-top: 0px;
+    }
+}
+
+// Landscape phone to portrait tablet
+@media (max-width: 768px) {
+    iframe{
+        height: 350px;
+    }
+}
+
+// Landscape phones and down
+@media (max-width: 480px) {
+    iframe{
+        height: 244px;
+    }
+    footer{
+        text-align: left;
+        font-size: 18px;
+    }
+    .navhome section h1{
+        font-size: 35px;
+        line-height: 48px;
+    }
+    .navbar-fixed-top, body{
+      padding-left:0;
+      padding-right:0;
+      margin-left:0;
+      margin-right:0;
+    }
+}
+
+@media (max-width: 767px){
+    .container {
+        padding: 20px;
+    }
+}

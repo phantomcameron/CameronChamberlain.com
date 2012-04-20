@@ -1,0 +1,703 @@
+/*  HTML5 ✰ Boilerplate  */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background:transparent;		/* Modified */
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul { list-style:none; }		/* Modified */
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; } /* Modified, not sure if needed */
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+table { border-collapse: collapse; border-spacing: 0; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+input, select { vertical-align: middle; }
+
+body { font:13px/1.231 sans-serif; *font-size:small; } 
+select, input, textarea, button { font:99% sans-serif; }
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+html { overflow-y: scroll; }
+a:hover, a:active { outline: none; }
+ul, ol { margin-left: 2em; } /* Was modified before to 1.8em, not sure if that was default or not */
+ol { list-style-type: decimal; }
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+td { vertical-align: top; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 15px; }
+textarea { overflow: auto; }
+.ie6 legend, .ie7 legend { margin-left: -7px; } 
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+button, input, select, textarea { margin: 0; }
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red; }
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+::-moz-selection{ background: #8580A9; color:#fff; text-shadow: none; }
+::selection { background:#8580A9; color:#fff; text-shadow: none; }
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+img::selection 		{background: transparent;}			/* From LESS framework */
+img::-moz-selection	{background: transparent;}			/* From LESS framework */
+body {-webkit-tap-highlight-color: rgb(255,255,158);}	/* From LESS framework */
+
+button {  width: auto; overflow: visible; }
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+body, select, input, textarea {  color: #444;
+ /*	font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+ 	font-weight:200; Modified, Old Fontstack, not sure if needed*/
+}
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+a, a:active, a:visited, .inside { color: #7B838C; }	/* Modified */
+a:hover, .inside:hover { color: #003366; }			/* Modified */
+a img {border: 0;} /* From LESS framework */
+
+/*	Typography presets
+	------------------	*/
+
+.gigantic {
+	font-size: 110px;
+	line-height: 120px;
+	letter-spacing: -2px;
+}
+
+.huge, h1 {
+	font-size: 68px;
+	line-height: 72px;
+	letter-spacing: -1px;
+}
+
+.large, h2 {
+	font-size: 42px;
+	line-height: 48px;
+}
+
+.bigger, h3 {
+	font-size: 26px;
+	line-height: 36px;
+}
+
+.big, h4 {
+	font-size: 22px;
+	line-height: 30px;
+}
+
+body {
+	font: 16px/24px;
+}
+
+.small, small {
+	font-size: 13px;
+	line-height: 18px;
+}
+/*
+    // ========================================== \\
+   ||                                              ||
+   ||			   Site Specific Styles			   ||
+   ||                                              ||
+    \\ ========================================== //
+*/
+
+/*		Default Layout: 992px. 
+		Gutters: 24px.
+		Outer margins: 48px.
+		Leftover space for scrollbars @1024px: 32px.
+-------------------------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8      9      10
+px      68    160    252    344    436    528    620    712    804    896    */
+html, body {height: 100%;}
+
+html{
+	background-color:  #dcc9bc;
+	background-image: -webkit-gradient(linear, 0 0, 100% 100%,
+						color-stop(.25, rgba(255, 255, 255, .05)),
+						color-stop(.25, transparent),
+						color-stop(.5, transparent),
+						color-stop(.5, rgba(255, 255, 255, .05)),
+						color-stop(.75, rgba(255, 255, 255, .05)),
+						color-stop(.75, transparent),
+						to(transparent));
+	background-image: -moz-linear-gradient(-45deg,
+						rgba(255, 255, 255, .05) 25%,
+						transparent 25%,
+						transparent 50%,
+						rgba(255, 255, 255, .05) 50%,
+						rgba(255, 255, 255, .05) 75%,
+						transparent 75%, transparent);
+	background-image: -o-linear-gradient(-45deg,
+						rgba(255, 255, 255, .05) 25%,
+						transparent 25%,
+						transparent 50%,
+						rgba(255, 255, 255, .05) 50%,
+						rgba(255, 255, 255, .05) 75%,
+						transparent 75%, transparent);
+	background-image: linear-gradient(-45deg,
+						rgba(255, 255, 255, .05) 25%,
+						transparent 25%,
+						transparent 50%,
+						rgba(255, 255, 255, .05) 50%,
+						rgba(255, 255, 255, .05) 75%,
+						transparent 75%, transparent);
+	-webkit-background-size: 50px 50px;
+	-moz-background-size: 50px 50px;
+	background-size: 50px 50px; /* Controls the size of the stripes */
+	}
+
+body {
+	margin: auto;
+	width: 896px;
+/*		background: rgb(232,232,232);	*/
+	color: rgb(60,60,60);
+	-webkit-text-size-adjust:none; -ms-text-size-adjust:none; /* Stops Mobile Safari from auto-adjusting font-sizes */
+}
+	
+header{
+	background-color: #F6EEE7;
+	background-image: -moz-linear-gradient(top, #F6EEE7, #E9E2DB); /* FF3.6 */
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #F6EEE7),color-stop(1, #E9E2DB)); /* Saf4+, Chrome */
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#F6EEE7', EndColorStr='#E9E2DB'); /* IE6,IE7 */
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#F6EEE7', EndColorStr='#E9E2DB')"; /* IE8 */
+    margin: 0px auto 1.5em; /* center */ padding: 24px;
+	   -moz-box-shadow: 1px 1px 8px #a09c99;
+	-webkit-box-shadow: 1px 1px 8px #a09c99;
+			box-shadow: 1px 1px 8px #a09c99;
+	color: #484038;
+	border:1px solid #888;
+	border-top-style: none;
+	    -moz-border-radius: 0px 0px 3px 3px;
+	         border-radius: 0px 0px 3px 3px;
+}
+
+header h1{
+	font-size: 40px;
+	line-height: 48px;
+	display: inline;
+}
+
+h1 a{
+	text-decoration: none;
+	color:#484038;
+}
+
+nav{
+	font-size: 26px;
+	line-height: 36px;
+	margin-left:110px;
+	font-weight: 200;
+	display: inline;
+}
+
+nav a{
+	text-decoration: none;
+}
+
+.navhome #navhome{
+	text-shadow:0px 2px 3px #FFF;
+}
+
+section {
+	overflow:auto;
+	background-color:#E9E2DB;
+	margin: 24px auto 48px; /* center */ padding: 24px;
+	   -moz-box-shadow: 1px 1px 8px #a09c99;
+	-webkit-box-shadow: 1px 1px 8px #a09c99;
+			box-shadow: 1px 1px 8px #a09c99;
+	color:#484038;
+	border:1px solid #999;
+	    -moz-border-radius: 3px;
+	         border-radius: 3px;
+}
+
+.navhome section h2 {
+	text-align: right;
+}
+
+.no-textshadow .navhome #navhome{
+	color:black;
+}
+
+iframe{
+	width: 848px;
+	height: 477px;
+}
+
+#halfVid iframe{
+	width: 400px;
+	height: 225px;
+	padding:10px;
+	float:left;
+}
+
+.navhome section h1{
+	font-size: 54px;
+	line-height: 62px;
+	font-weight: 200;
+}
+
+.navhome section h2{
+	font-size: 36px;
+	line-height: 42px;
+	font-weight: 200;
+}
+
+footer{
+	text-align:right;
+	background:#FFF;
+	font-size: 22px;
+	line-height: 30px;
+	-moz-border-radius: 3px;
+	 border-radius: 3px;
+}
+
+#footer{
+	padding:22px;
+	border:1px #FF5E99 solid;
+}
+
+		
+footer:target {
+    -moz-box-shadow: 0 0 100px #8580A9;
+    -webkit-box-shadow: 0 0 100px #8580A9;
+    box-shadow: 0 0 100px #8580A9;
+}
+
+.no_js footer:hover{
+	border-width: 0.5em;
+	border-bottom-width: 0em;
+	border-color: #93b135;
+}
+
+
+/* class header is the headers on the project page */
+.header{
+	padding-bottom: 0.1em;
+	margin-bottom:0.5em;
+	cursor: pointer;
+}
+
+.inside{
+	border-bottom: 1px #FFF solid;
+	font-size: 42px;
+	line-height: 48px;
+	font-weight:200;
+}
+.navprojects h2{
+	font-size: 13px;
+	line-height: 18px;
+}
+
+.active{
+	color:black;
+}
+
+.active:hover{
+	color:#BBB;
+}
+
+hr{
+	background-color:  #dcc9bc;
+	border-bottom: 1px solid #CCC;
+}
+
+.navhome section{
+	overflow: visible;
+}
+
+h2 a{
+	text-decoration: none;
+}
+
+.vcard img, .org, .title, .role, .adr, .fn{
+	display:none;
+}
+
+.navhome #navhome, .navbiography #navbiography, .navprojects #navprojects, .navdrawing #navdrawing{
+	color: #484038;
+	cursor: default;
+}
+
+em{
+	color: #93b135;
+	text-shadow: 0px 1px 0px #FFF;
+	font-style: normal;
+	font-weight: 200;
+	display: inline-block;
+}
+
+@-webkit-keyframes emHover {
+	0% {-webkit-transform:skew(0deg);} 							/*start at 0*/
+	10% {-webkit-transform:skew(-2deg, -12deg);} 				/*anticipation*/
+	15% {-webkit-transform:skew(5deg, 20deg);}					/*breakdown*/
+	70% {				padding-left: 3px;
+						-webkit-transform:skew(10deg, 30deg);} 	/*key*/
+	71% {  				padding-left: 0.5em;
+						-webkit-transform:skew(12deg, 35deg);} 	/*pushed key*/
+	75% {				padding-left: 0px;
+						-webkit-transform:skew(0deg, 0deg);}	/*return to 0*/
+	77% {-webkit-transform:skew(-2deg, -5deg);} 				/*bounce*/
+	80% {-webkit-transform:skew(0deg);}							/*bounce back*/
+	100% {-webkit-transform:skew(0deg);} 						/*return to 0*/
+}
+	
+section h1:hover em{
+	-webkit-transform-origin: bottom left;
+	-webkit-animation-name: emHover;
+	-webkit-animation-duration: 3.5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-out;
+	
+	-moz-transform-origin: bottom left;
+	-moz-transition: all 0.5s ease-in;
+	-moz-transform: rotate(21deg);
+	-o-transform-origin: bottom left;
+	-o-transition: all 0.5s ease-in;
+	-o-transform: rotate(21deg);
+	transform-origin: bottom left;
+	transition: all 0.5s ease-in;
+	transform: rotate(21deg);
+}
+
+
+
+/*Bio Page*/
+.navbiography section h1{
+	font-size: 26px;
+	line-height: 36px;
+}
+
+p{
+	font-size: 22px;
+	line-height: 30px;
+	font-weight:200;
+}
+
+/*
+#fancybox-img{
+	width:960px;
+	height:540px;
+	position: absolute;
+	left:50%;
+	top:50%;
+	margin-top: -270px;
+	margin-left: -480px;
+}
+*/
+
+/* Projects Page */
+table{
+	width: 100%;
+	font-size: 20px;
+	line-height: 32px;
+	font-weight:200;
+}
+
+.navprojects img{
+	padding: 8px;
+	margin: auto;
+	width: 192px;
+	height: 108px;
+}
+
+.navprojects img:hover{
+   -moz-box-shadow: 1px 1px 8px #a09c99;
+-webkit-box-shadow: 1px 1px 8px #a09c99;
+		box-shadow: 1px 1px 8px #a09c99;
+}
+
+.navprojects h2{
+	padding:1em 0em 0.75em;
+}
+
+/* Drawings Page */
+.allSlides {
+	width: 62em;
+	height: 46em;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	text-align:left; 
+	z-index: 4;
+}
+
+.no-js .allSlides{
+	background-image: url(../images/drawing_nojs.jpg);
+	background-repeat: no-repeat;
+}
+
+.no-js .allSlides h1{
+	display: none;
+	visibility: hidden;
+}
+
+
+.allSlides img{
+	max-width:100%;
+	max-height:100%;
+}
+
+.js section .content {display:none;}
+
+/* Footer */
+html, body {
+	height: 100%;
+}
+.wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -92px; /* the bottom margin is the negative value of the footer's height */
+}
+footer, .push {
+	height: 92px; /* .push must be the same height as .footer */
+}
+
+/*		Tablet Layout: 768px.
+		Gutters: 24px.
+		Outer margins: 28px.
+		Inherits styles from: Default Layout.
+-----------------------------------------------------------------
+cols    1     2      3      4      5      6      7      8
+px      68    160    252    344    436    528    620    712    */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	
+	body {
+		width: 712px;
+	}
+
+	iframe{
+		width: 664px;
+		height: 374px;
+	}
+
+	header h1{
+		font-size: 30px;
+		line-height: 42px;
+	}
+
+	nav{
+		margin: 32px;
+	}
+	
+	.navhome section h1{
+		font-size: 40px;
+		line-height: 48px;
+	}
+	
+	p{
+		font-size: 16px;
+		line-height: 22px;
+	}
+	
+	.allSlides {
+		width: 664px;
+		height: 493px;
+	}
+	.navprojects img {
+		padding: 8px 68px;
+	}
+}
+
+
+
+/*		Mobile Layout: 320px.
+		Gutters: 24px.
+		Outer margins: 34px.
+		Inherits styles from: Default Layout.
+---------------------------------------------
+cols    1     2      3
+px      68    160    252    */
+
+@media only screen and (max-width: 767px) {
+
+	body {
+		max-width: 368px;
+		width: 100%;
+	}
+	
+	iframe{
+		width: 280px;
+		height: 158px;
+	}
+	
+	nav{
+		display: block;
+		margin: 0px;
+		font-size: 22px;
+		line-height: 30px;
+	}
+	
+	header h1{
+		font-size: 26px;
+		line-height: 42px;
+	}
+	
+	.navhome section h1{
+		font-size: 22px;
+		line-height: 36px;
+	}
+
+	.navhome section h2{
+		display:none;
+	}
+
+	.wrap {
+		min-height: 0px;
+		height: auto;
+		margin: 0;
+	}
+	.push {
+		height: 0px;
+	}
+	
+	#footer{
+		text-align:left;
+	}
+	
+	p{
+		font-size: 13px;
+		line-height: 18px;
+	}
+	
+	.allSlides {
+		width: 204px;
+		height: 152px;
+	}
+	
+	.navprojects img {
+		padding: 2px 42px;
+		margin: auto;
+		width: 192px;
+		height: 108px;
+	}
+}
+
+
+/*		Wide Mobile Layout: 480px.
+		Gutters: 24px.
+		Outer margins: 22px.
+		Inherits styles from: Default Layout, Mobile Layout.
+------------------------------------------------------------
+cols    1     2      3      4      5
+px      68    160    252    344    436    */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	
+	body {
+		max-width: none;
+		width: 436px;
+	}
+
+	iframe{
+		width: 396px;
+		height: 223px;
+	}
+	
+	header h1{
+		font-size: 30px;
+		line-height: 42px;
+	}
+
+	.navhome section h1{
+		font-size: 31px;
+		line-height: 36px;
+	}
+
+	#footer{
+		text-align:right;
+	}
+	
+	nav{
+		font-size: 26px;
+		line-height: 36px;
+	}
+	p{
+		font-size: 16px;
+		line-height: 22px;
+	}
+	.allSlides {
+		width: 388px;
+		height: 288px;
+	}
+	.navprojects img {
+		padding: 0;
+		margin: auto;
+		width: 190px;
+		height: 107px;
+	}
+}
+
+
+/*	Retina media query.
+	Overrides styles for devices with a 
+	device-pixel-ratio of 2+, such as iPhone 4.
+-----------------------------------------------    */
+
+@media 
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min-device-pixel-ratio: 2) {
+	
+	body {
+	
+	}
+	
+}
+
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.hidden { display: none; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+@media print {
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+  -ms-filter: none !important; } 
+  a, a:visited { color: #444 !important; text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3{ page-break-after: avoid; }
+}

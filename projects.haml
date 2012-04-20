@@ -1,0 +1,331 @@
+!!! 5
+:plain
+  <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+  <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+  <!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+%head
+  %meta(charset = "utf-8")
+  %meta(http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1")
+  %title= "Cameron Chamberlain - Australian Character Animator"
+  %meta(name = "description" content = "Portfolio for Cameron Chamberlain, Character Animator from Canberra Australia")
+  %meta(name = "author" content = "Cameron Chamberlain")
+  %meta(name = "viewport" content = "width=device-width, initial-scale=1.0")
+  %link(rel = "stylesheet" href = "css/main.css")
+  %script(src = "js/libs/modernizr.custom.57237.js")
+
+%body.navhome(lang="en")
+  / Navbar
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        / btn-navbar is used as the toggle for collapsed navbar content
+        %a.btn.btn-navbar(data-toggle="collapse" data-target=".nav-collapse")
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        / Be sure to leave the brand out there if you want it shown
+        %a.brand(href="index.html")
+          Cameron Chamberlain
+
+        <!-- Everything you want hidden at 940px or less, place within here -->
+        .nav-collapse
+          %ul.nav
+            %li
+              %a#navbiography(href="biography.html")
+                %i.icon-list-alt
+                Biography
+            %li.active
+              %a#navprojects(href="projects.html")
+                %i.icon-film
+                Projects
+            %li
+              %a#navdrawing(href="drawing.html")
+                %i.icon-pencil
+                Drawing
+  #wrap
+    %section.container#main(role="main")
+      #accordion1.accordion
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseOne"}
+              Self Portraiture in Geometry
+          #collapseOne.accordion-body.collapse.in
+            .accordion-inner
+              .row
+                %iframe.span6{:src => "http://player.vimeo.com/video/33464261?title=1&byline=0&portrait=0&color=01AAEA"}
+                %iframe.span6{:src => "http://player.vimeo.com/video/25305078?title=1&byline=0&portrait=0&color=01AAEA"}
+                %iframe.span6{:src => "http://player.vimeo.com/video/25308556?title=1&byline=0&portrait=0&color=01AAEA"}
+                %iframe.span6{:src => "http://player.vimeo.com/video/25308914?title=1&byline=0&portrait=0&color=01AAEA"}
+                %iframe.span6{:src => "http://player.vimeo.com/video/25308187?title=1&byline=0&portrait=0&color=01AAEA"}
+                %iframe.span6{:src => "http://player.vimeo.com/video/36272619?title=1&byline=0&portrait=0&color=01AAEA"}
+              %h2 Development Stills
+              .row
+                #Carousel1.carousel.slide.span8.offset2
+                  .carousel-inner
+                    .item.active
+                      %img{:alt => "Test Keys", :src => "images/960Hons_StrutTestKeys.jpg"}
+                    .item
+                      %img{:alt => "Affection Install", :src => "images/960Hons_AffectionInstall.jpg"}
+                    .item
+                      %img{:alt => "Sadness Install", :src => "images/960Hons_SadnessInstall.jpg"}
+                    .item
+                      %img{:alt => "Love Sketch", :src => "images/960Hons_LoveSketch.jpg"}
+                  %a.carousel-control.left(href="#Carousel1" data-slide="prev")
+                    &lsaquo;
+                  %a.carousel-control.right(href="#Carousel1" data-slide="next")
+                    &rsaquo;
+              %h2 Abstract
+              .row
+                %p.span6.offset3
+                  Through a series of self portraits I am investigating how pictorially simplified characters may be used in 3D character animation to show emotion. Most 3D animation tends towards realism, which has been successfully used to create strong emotional reactions in an audience. Instead, I am using geometric primitives to explore motion separately from character models which are inherently emotive. I am bringing the techniques of character animation into a fine arts context to communicate emotively with the viewer.
+              %h4
+                .row
+                  %a.offset4.span4.btn.btn-large.btn-info{:href => "files/CJC_Hons_v11compressed.pdf"}
+                    %i.icon-file.icon-white
+                    View Fulltext Exegesis
+              %h2 Exhibitions
+              %table.table
+                %tr
+                  %td>/
+                  2011
+                  %td>/
+                  Graduate Exhibition
+                  %td>/
+                  ANU School of Art
+                %tr
+                  %td>/
+                  2011
+                  %td>/
+                  Graduate Showcase
+                  %td>/
+                  ARC Cinema, National Film and Sound Archive
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseTwo"}
+              Prometheus
+          #collapseTwo.accordion-body.collapse
+            .accordion-inner
+              %iframe{:allowFullScreen => "", :height => "450", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/17149591?title=0&byline=0&portrait=0&color=C69E86", :webkitAllowFullScreen => "", :width => "800"}
+              %h2 Development Stills
+              .row
+                #Carousel2.carousel.slide.span8.offset2
+                  .carousel-inner
+                    .item.active
+                      %img{:alt => "Test Scene", :src => "images/960Prometheus_Test_Scene.jpg"}
+                    .item
+                      %img{:alt => "Test Face", :src => "images/960Prometheus_testfacerender.jpg"}
+                    .item
+                      %img{:alt => "DW face", :src => "images/960Prometheus_dwface.jpg"}
+                    .item
+                      %img{:alt => "Posed Face", :src => "images/960Prometheus_TestRenderFacePosed.jpg"}
+                  %a.carousel-control.left(href="#Carousel2" data-slide="prev")
+                    &lsaquo;
+                  %a.carousel-control.right(href="#Carousel2" data-slide="next")
+                    &rsaquo;
+              %h2 Synopsis
+              .row
+                %p.span6.offset3
+                  We have always been intertwined with nature.
+                  %br
+                  This relationship was vital for our creation and continues to be important for our survival.
+                  %br
+                  We strive to progress past our technological and physical boundaries,
+                  %br
+                  often to the detriment of this connection.
+                  %br
+                  Prometheus references work by artists working in many disciplines,
+                  %br
+                  Miyazaki Hayao, Khien Yimsiri, James Turrell and Tadao Ando.
+                  %br
+                  It draws upon these artist's responses to nature and humanity to explore the relationship between them.
+              %h2 Exhibitions
+              %table.table
+                %tr
+                  %td>/
+                  2010
+                  %td>/
+                  Graduate Exhibition
+                  %td>/
+                  ANU School of Art
+                %tr
+                  %td>/
+                  2010
+                  %td>/
+                  Graduate Showcase
+                  %td>/
+                  ARC Cinema, National Film and Sound Archive
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseThree"}
+              Measure
+          #collapseThree.accordion-body.collapse
+            .accordion-inner
+              %iframe{:allowFullScreen => "", :height => "450", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/16810883?title=0&byline=0&portrait=0&color=C69E86", :webkitAllowFullScreen => "", :width => "800"}
+              %h2 Synopsis
+              %p
+                A 3D animated commercial for
+                %a{:href => "http://emBODYment.com.au"} emBODYment          
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseFour"}
+              Enclosure
+          #collapseFour.accordion-body.collapse
+            .accordion-inner
+              %iframe{:allowFullScreen => "", :height => "450", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/18377220?title=0&byline=0&portrait=0&color=C69E86&loop=1", :webkitAllowFullScreen => "", :width => "800"}
+              %h2 Synopsis
+              %p A piece designed to be displayed in exhibition on a loop.
+              %h2 Exhibitions
+              %table.table
+                %tr
+                  %td>/
+                  2010
+                  %td>/
+                  Chain Gang Exhibition
+                  %td>/
+                  Exhibition Space at 131 City Walk        
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseFive"}
+              Caged
+          #collapseFive.accordion-body.collapse
+            .accordion-inner
+              %iframe{:allowFullScreen => "", :height => "450", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/14439500?title=0&byline=0&portrait=0&color=C69E86", :webkitAllowFullScreen => "", :width => "800"}
+              %h2 Synopsis
+              %p A Gorilla Wakes Up.
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseSix"}
+              Cave
+          #collapseSix.accordion-body.collapse
+            .accordion-inner
+              %iframe{:allowFullScreen => "", :height => "450", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/12660385?title=0&byline=0&portrait=0&color=C69E86", :webkitAllowFullScreen => "", :width => "800"}
+              %h2 Synopsis
+              %p A difficult choice between different treasures.
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseSeven"}
+              Jetpack
+          #collapseSeven.accordion-body.collapse
+            .accordion-inner
+              %iframe{:allowFullScreen => "", :height => "450", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/9661205?title=0&byline=0&portrait=0&color=C69E86", :webkitAllowFullScreen => "", :width => "800"}
+              %h2 Synopsis
+              %p Propaganda film for the use of Jetpacks in Warfare.
+              %h2 Exhibitions
+              %table.table
+                %tr
+                  %td>/
+                  2011
+                  %td/
+                  %a{:href => "http://the-riotact.com/hey-dad-can-you-pick-me-up-from-joshs-otherwise-its-like-two-buses/35773"} Hey Dad Can You Pick Me Up From Josh's Otherwise It's Like Two Buses
+                  %td>/
+                  The Phoenix
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseEight"}
+              Geometric
+          #collapseEight.accordion-body.collapse
+            .accordion-inner
+              %iframe{:allowFullScreen => "", :height => "450", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/6240310?title=0&byline=0&portrait=0&color=C69E86", :webkitAllowFullScreen => "", :width => "800"}
+              %h2 Synopsis
+              %p Motion and Light experiment in three dimensions.
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseNine"}
+              Manta
+          #collapseNine.accordion-body.collapse
+            .accordion-inner
+              %iframe{:allowFullScreen => "", :height => "450", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/7956755?title=0&byline=0&portrait=0&color=C69E86", :webkitAllowFullScreen => "", :width => "800"}
+              %h2 Synopsis
+              %p Lonely Manta Ray.
+              %h2 Exhibitions
+              %table.table
+                %tr
+                  %td>/
+                  2009
+                  %td>/
+                  Graduate Showcase
+                  %td>/
+                  ARC Cinema, National Film and Sound Archive
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseTen"}
+              Modernity
+          #collapseTen.accordion-body.collapse
+            .accordion-inner
+              %iframe{:allowFullScreen => "", :height => "450", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/4961870?title=0&byline=0&portrait=0&color=C69E86", :webkitAllowFullScreen => "", :width => "800"}
+              %h2 Synopsis
+              %p A Train explores a Mondrian-esque City.
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseEleven"}
+              Endurance
+          #collapseEleven.accordion-body.collapse
+            .accordion-inner
+              %iframe{:allowFullScreen => "", :height => "450", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/5408469?title=0&byline=0&portrait=0&color=C69E86", :webkitAllowFullScreen => "", :width => "800"}
+              %h2 Synopsis
+              %p Frank Hurley Films the treacherous Antarctic.
+              %h2 Exhibitions
+              %table.table
+                %tr
+                  %td>/
+                  2009
+                  %td>/
+                  Australian Journeys
+                  %td>/
+                  National Museum of Australia
+        .accordion-group
+          .accordion-heading
+            %a.accordion-toggle{"data-parent" => "#accordion1", "data-toggle" => "collapse", :href => "#collapseTwelve"}
+              Ibis
+          #collapseTwelve.accordion-body.collapse
+            .accordion-inner
+              %iframe{:height => "450", :src => "http://player.vimeo.com/video/4423964?title=0&byline=0&portrait=0&color=C69E86", :width => "800"}
+              %h2 Synopsis
+              %p An Ibis goes fishing.
+
+
+    .push
+  %footer.container#footer(onmouseover="this.style.backgroundColor='#FFF'" onmouseout="this.style.backgroundColor='#E9E2DB';")
+    #hcard-Cameron-Chamberlain.vcard
+      %span.fn Cameron Chamberlain
+      .adr
+        %span.locality Canberra
+        %span.country-name Australia
+      %br
+      %a.email(name="contact" href="mailto:hi@cameronchamberlain.com") hi@cameronchamberlain.com
+      %br
+      .tel 0431 993 870
+      %img.photo(src="http://30.media.tumblr.com/avatar_63d32ed86b04_64.png" alt="Cameron Chamberlain" )
+      %span.org Cameron Chamberlain (Sole Trader)
+      %span.title Character Animator
+      %span.role Animator
+          
+  %script(src = "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+  %script window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>') 
+  %script(src = "js/libs/bootstrap-collapse.js")
+
+  %script(src = "js/libs/bootstrap-carousel.js")
+  %script(src = "js/libs/bootstrap-transition.js")
+  %script(src = "js/plugins.js")
+  %script(src = "js/script.js")
+  
+  %script
+    $(document).ready(function() {
+    
+    $('#accordion1').collapse({
+    toggle: false;
+    });
+    
+    $('.carousel').carousel({
+    interval: 6000;
+    });
+
+    });
+    var _gaq=[['_setAccount','UA-2149395-2'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+
+</html>

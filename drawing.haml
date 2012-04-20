@@ -1,0 +1,95 @@
+!!! 5
+:plain
+  <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+  <!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+  <!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+%head
+  %meta(charset = "utf-8")
+  %meta(http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1")
+  %title= "Cameron Chamberlain - Australian Character Animator"
+  %meta(name = "description" content = "Portfolio for Cameron Chamberlain, Character Animator from Canberra Australia")
+  %meta(name = "author" content = "Cameron Chamberlain")
+  %meta(name = "viewport" content = "width=device-width, initial-scale=1.0")
+  %link(rel = "stylesheet" href = "css/main.css")
+  %script(src = "js/libs/modernizr.custom.57237.js")
+
+%body.navhome(lang="en")
+  / Navbar
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        / btn-navbar is used as the toggle for collapsed navbar content
+        %a.btn.btn-navbar(data-toggle="collapse" data-target=".nav-collapse")
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        / Be sure to leave the brand out there if you want it shown
+        %a.brand(href="index.html")
+          Cameron Chamberlain
+ 
+        <!-- Everything you want hidden at 940px or less, place within here -->
+        .nav-collapse
+          %ul.nav
+            %li
+              %a#navbiography(href="biography.html")
+                %i.icon-list-alt
+                Biography
+            %li
+              %a#navprojects(href="projects.html")
+                %i.icon-film
+                Projects
+            %li.active
+              %a#navdrawing(href="drawing.html")
+                %i.icon-pencil
+                Drawing
+  #wrap
+    %section.container#main(role="main")
+      .allSlides#slideShowDraw
+        %h1 Loading
+    .push
+  %footer.container#footer(onmouseover="this.style.backgroundColor='#FFF'" onmouseout="this.style.backgroundColor='#E9E2DB';")
+    #hcard-Cameron-Chamberlain.vcard
+      %span.fn Cameron Chamberlain
+      .adr
+        %span.locality Canberra
+        %span.country-name Australia
+      %br
+      %a.email(name="contact" href="mailto:hi@cameronchamberlain.com") hi@cameronchamberlain.com
+      %br
+      .tel 0431 993 870
+      %img.photo(src="http://30.media.tumblr.com/avatar_63d32ed86b04_64.png" alt="Cameron Chamberlain" )
+      %span.org Cameron Chamberlain (Sole Trader)
+      %span.title Character Animator
+      %span.role Animator
+          
+  %script(src = "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
+  %script window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')
+  %script(src = "js/libs/bootstrap-collapse.js")
+  
+  %script(src = "http://www.google.com/jsapi")
+  %script(src = "http://www.google.com/uds/solutions/slideshow/gfslideshow.js")
+
+  %script(src = "js/plugins.js")
+  %script(src = "js/script.js")
+  
+  %script
+    var _gaq=[['_setAccount','UA-2149395-2'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+      
+    function LoadSlideShowDraw() {
+    var feed2  = "http://cameronchamberlain.com/FlickrRSS.php?uri=http://api.flickr.com/services/feeds/photos_public.gne?id=42387290@N00&tags=drawingcameronchamberlain&lang=en-us&format=rss_200";
+    var options2 = {displayTime:5000,
+    transistionTime:300,
+    fullControlPanel : true,
+    fullControlPanelSmallIcons : true,
+    scaleImages:true,
+    linkTarget : google.feeds.LINK_TARGET_BLANK};
+    var ss = new GFslideShow(feed2, "slideShowDraw", options2);
+    }
+    google.load("feeds", "1");
+    google.setOnLoadCallback(LoadSlideShowDraw);
+</html>
