@@ -46,8 +46,29 @@
                 Drawing
   #wrap
     %section.container#main(role="main")
-      .allSlides#slideShowDraw
-        %h1 Loading
+      .row
+        #CarouselDrawing.carousel.slide.span10.offset1
+          .carousel-inner
+            .item.active
+              %img{:alt => "", :src => "img/gallery/6428857909_8f3142f787_b.jpg"}
+            .item
+              %img{:alt => "", :src => "img/gallery/6428853789_ebc2ff8240_b.jpg"}
+            .item
+              %img{:alt => "", :src => "img/gallery/6327092316_68dcfd0d35_b.jpg"}
+            .item
+              %img{:alt => "", :src => "img/gallery/5409553314_da7d6ddb60_b.jpg"}
+            .item
+              %img{:alt => "", :src => "img/gallery/5148361270_54a9322505_b.jpg"}
+            .item
+              %img{:alt => "", :src => "img/gallery/5147758025_9c89674807_b.jpg"}
+            .item
+              %img{:alt => "", :src => "img/gallery/4976007876_f5d004636a_b.jpg"}
+            .item
+              %img{:alt => "", :src => "img/gallery/4506277935_032862982a_b.jpg"}
+          %a.carousel-control.left(href="#CarouselDrawing" data-slide="prev")
+            &lsaquo;
+          %a.carousel-control.right(href="#CarouselDrawing" data-slide="next")
+            &rsaquo;
     .push
   %footer.container#footer(onmouseover="this.style.backgroundColor='#FFF'" onmouseout="this.style.backgroundColor='#E9E2DB';")
     #hcard-Cameron-Chamberlain.vcard
@@ -67,29 +88,23 @@
   %script(src = "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js")
   %script window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')
   %script(src = "js/libs/bootstrap-collapse.js")
+  %script(src = "js/libs/bootstrap-carousel.js")
+  %script(src = "js/libs/bootstrap-transition.js")
   
-  %script(src = "http://www.google.com/jsapi")
-  %script(src = "http://www.google.com/uds/solutions/slideshow/gfslideshow.js")
-
   %script(src = "js/plugins.js")
   %script(src = "js/script.js")
   
   %script
+    $(document).ready(function() {
+    
+    $('.carousel').carousel({
+    interval: 1000;
+    });
+
+    });
     var _gaq=[['_setAccount','UA-2149395-2'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
     g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
     s.parentNode.insertBefore(g,s)}(document,'script'));
-      
-    function LoadSlideShowDraw() {
-    var feed2  = "http://cameronchamberlain.com/FlickrRSS.php?uri=http://api.flickr.com/services/feeds/photos_public.gne?id=42387290@N00&tags=drawingcameronchamberlain&lang=en-us&format=rss_200";
-    var options2 = {displayTime:5000,
-    transistionTime:300,
-    fullControlPanel : true,
-    fullControlPanelSmallIcons : true,
-    scaleImages:true,
-    linkTarget : google.feeds.LINK_TARGET_BLANK};
-    var ss = new GFslideShow(feed2, "slideShowDraw", options2);
-    }
-    google.load("feeds", "1");
-    google.setOnLoadCallback(LoadSlideShowDraw);
+
 </html>
